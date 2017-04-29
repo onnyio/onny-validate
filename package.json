@@ -1,0 +1,51 @@
+{
+  "name": "onny-validate",
+  "version": "0.0.1",
+  "description": "common validators for onny products",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .js --format ./node_modules/eslint-config-onny/eslintFormat",
+    "lint-fix": "eslint . --ext .js --format ./node_modules/eslint-config-onny/eslintFormat --fix",
+    "lint-fix_test": "eslint ./test --ext .js --format ./node_modules/eslint-config-onny/eslintFormat --fix",
+    "test_local": "mocha --require babel-polyfill --compilers js:babel-register",
+    "test": "nyc --require babel-register --require babel-polyfill mocha && nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onnyio/onny-validate.git"
+  },
+  "keywords": [
+    "onny",
+    "validate",
+    "validator"
+  ],
+  "author": "Isaac Marotte <isaac@onny.io>",
+  "contributors": [
+    "Isaac Marotte <isaac@onny.io> (http://onny.io)"
+  ],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/onnyio/onny-validate/issues"
+  },
+  "homepage": "https://github.com/onnyio/onny-validate#readme",
+  "dependencies": {
+    "validator": "^7.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-istanbul": "^4.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^3.5.0",
+    "coveralls": "^2.13.0",
+    "eslint-config-onny": "^1.0.1-0",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^10.2.0"
+  }
+}
