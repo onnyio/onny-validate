@@ -9,8 +9,31 @@ Common validators and sanitizers for our Onny apps and utils
 
 Mostly based on/wrappers for [validator](https://www.npmjs.com/package/validator)
 
+## Installation
+`npm i --save onny-validate`
 
-##Validators
+````javascript
+// load everything
+import onnyUtils from 'onny-validate';
+
+// validators only
+import validators from 'onny-validate/validate';
+
+// sanitizers only
+import sanitize from 'onny-validate/sanitize';
+
+// selective loading validators
+import { isArray } from 'onny-validate';
+// or
+import isArray from 'onny-validate/validate/isArray';
+````
+
+## Why onny-validate?
+Common validators and sanitizers to be used across all onny products
+
+
+
+## Validators
 
 
 ### `isArray(value)`
@@ -67,7 +90,7 @@ See [MongoDB ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId
 * @returns {boolean} - true if formatted as a mongoID
 
 
-##Sanitizers
+## Sanitizers
 
 ### `escape(input)`
 Replace <, >, &, ', " and / with HTML entities.
