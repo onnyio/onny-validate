@@ -10,101 +10,7 @@
  * Last Modified: 2017.4.28
  */
 
-
-'use strict'
-
-var validate = require('./validate');
-var sanitize = require('./sanitize');
-
 module.exports = {
-  /**
-   * Are we an array?
-   *
-   * @param {*|Array} value - value to test
-   * @returns {boolean} - true if array, false if not
-   */
-  isArray: function(value){
-    return validate.isArray(value);
-  },
-
-  /**
-   * @function
-   * @param {*|null} value - value to test
-   * @returns {boolean} - true if null or defined, false if not
-   */
-  isNull: function(value){
-    return validate.isNull(value);
-  },
-  /**
-   * @param {*|boolean} value - the value to test
-   * @param {boolean} [numAllowed] - should we treat 1/0 as true/false. defaults to false
-   * @returns {boolean} - true if boolean, false if not
-   */
-  isBool: function(value, numAllowed){
-    return validate.isBool(value, numAllowed);
-  },
-  /**
-   * @param {*|string} value - value to test
-   * @returns {boolean} - true if string, false if not
-   */
-  isString: function(value){
-    return validate.isString(value);
-  },
-
-  /**
-   * @param {*|string} value - value to test
-   * @returns {boolean} - true if email, false if not
-   */
-  isEmail: function (value) {
-    return validate.isEmail(value);
-  },
-
-  /**
-   * @param {*|string} value - value to test
-   * @returns {boolean} - true if valid password, false if not
-   */
-  isPassword: function (value) {
-    return validate.isPassword(value);
-  },
-
-  /**
-   * @param {*|Date} value
-   * @returns {boolean} - true if valid date
-   */
-  isDate: function (value) {
-    return validate.isDate(value);
-  },
-
-  /**
-   * @param {*|Date} value - value to check
-   * @param {Date} beforeDate - the date to check against
-   * @returns {boolean} - true if valid date before
-   */
-  isDateBefore: function (value, beforeDate) {
-    return validate.isDateBefore(value, beforeDate);
-  },
-
-  /**
-   * @param {*|Date} value - value to check
-   * @param {Date} afterDate - the date to check against
-   * @returns {boolean} - true if valid date is after afterDate
-   */
-  isDateAfter: function (value, afterDate) {
-    return validate.isDateAfter(value, afterDate);
-  },
-
-  /**
-   * check if the string is a valid hex-encoded representation of a MongoDB ObjectId.
-   *
-   * See [MongoDB ObjectId]{@link https://docs.mongodb.com/manual/reference/method/ObjectId/}
-   *
-   * @param {*|String} value
-   * @returns {boolean} - true if formatted as a mongoID
-   */
-  isMongoId: function (value) {
-    return validate.isMongoId(value);
-  },
-
 
   /**
    * replace <, >, &, ', " and / with HTML entities.
@@ -113,7 +19,7 @@ module.exports = {
    * @returns {string|null} - string with  <, >, &, ', " and / replaced with HTML entities
    */
   escape: function (input) {
-    return sanitize.escape(input);
+    return require('./escape')(input);
   },
 
   /**
@@ -123,7 +29,7 @@ module.exports = {
    * @returns {string|null} - string with HTML encoded entities replaced with <, >, &, ', " and /
    */
   unescape: function (input) {
-    return sanitize.unescape(input);
+    return require('./unescape')(input);
   },
 
   /**
@@ -186,7 +92,7 @@ module.exports = {
    * @returns {string|null} - string with  <, >, &, ', " and / replaced with HTML entities
    */
   normalizeEmail: function (email, options) {
-    return sanitize.normalizeEmail(email, options);
+    return require('./normalizeEmail')(email, options);
   },
 
   /**
@@ -197,6 +103,6 @@ module.exports = {
    * @returns {string|false} - false if invalid, otherwise chars omitted string
    */
   blacklist: function (input, chars) {
-    return sanitize.blacklist(input, chars);
+    return require('./blacklist')(input, chars);
   }
 };
