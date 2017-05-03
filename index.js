@@ -13,27 +13,40 @@
 
 'use strict'
 
-var validate = require('./validate');
 var sanitize = require('./sanitize');
 
 module.exports = {
   /**
-   * Are we an array?
+   * Uses onny-utils to perform a deep comparison between two values to
+   * determine if they are equivalent.
    *
+   * Note: This method supports comparing arrays, array buffers, booleans, date objects,
+   * error objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and
+   * typed arrays. Object objects are compared by their own, not inherited, enumerable properties.
+   * Functions and DOM nodes are compared by strict equality, i.e. ===.
+   *
+   * @param {string|*} str1
+   * @param {string|*} str2
+   * @returns {boolean} - True if equal
+   */
+  isEqual: function isEqual(str1, str2) {
+    return require('./validate/isEqual')(str1, str2);
+  },
+
+  /**
    * @param {*|Array} value - value to test
    * @returns {boolean} - true if array, false if not
    */
   isArray: function(value){
-    return validate.isArray(value);
+    return require('./validate/isArray')(value);
   },
 
   /**
-   * @function
    * @param {*|null} value - value to test
    * @returns {boolean} - true if null or defined, false if not
    */
   isNull: function(value){
-    return validate.isNull(value);
+    return require('./validate/isNull')(value);
   },
   /**
    * @param {*|boolean} value - the value to test
@@ -41,14 +54,14 @@ module.exports = {
    * @returns {boolean} - true if boolean, false if not
    */
   isBool: function(value, numAllowed){
-    return validate.isBool(value, numAllowed);
+    return require('./validate/isBool')(value, numAllowed);
   },
   /**
    * @param {*|string} value - value to test
    * @returns {boolean} - true if string, false if not
    */
   isString: function(value){
-    return validate.isString(value);
+    return require('./validate/isString')(value);
   },
 
   /**
@@ -56,7 +69,7 @@ module.exports = {
    * @returns {boolean} - true if email, false if not
    */
   isEmail: function (value) {
-    return validate.isEmail(value);
+    return require('./validate/isEmail')(value);
   },
 
   /**
@@ -64,7 +77,7 @@ module.exports = {
    * @returns {boolean} - true if valid password, false if not
    */
   isPassword: function (value) {
-    return validate.isPassword(value);
+    return require('./validate/isPassword')(value);
   },
 
   /**
@@ -72,7 +85,7 @@ module.exports = {
    * @returns {boolean} - true if valid date
    */
   isDate: function (value) {
-    return validate.isDate(value);
+    return require('./validate/isDate')(value);
   },
 
   /**
@@ -81,7 +94,7 @@ module.exports = {
    * @returns {boolean} - true if valid date before
    */
   isDateBefore: function (value, beforeDate) {
-    return validate.isDateBefore(value, beforeDate);
+    return require('./validate/isDateBefore')(value, beforeDate);
   },
 
   /**
@@ -90,7 +103,7 @@ module.exports = {
    * @returns {boolean} - true if valid date is after afterDate
    */
   isDateAfter: function (value, afterDate) {
-    return validate.isDateAfter(value, afterDate);
+    return require('./validate/isDateAfter')(value, afterDate);
   },
 
   /**
@@ -102,7 +115,7 @@ module.exports = {
    * @returns {boolean} - true if formatted as a mongoID
    */
   isMongoId: function (value) {
-    return validate.isMongoId(value);
+    return require('./validate/isMongoId')(value);
   },
 
 
