@@ -12,30 +12,38 @@
 
 
 'use strict'
-
-var isArray = require('./isArray');
-var isNull = require('./isNull');
-var isBool = require('./isBool');
-var isString = require('./isString');
-
 module.exports = {
   /**
-   * Are we an array?
+   * Uses onny-utils to perform a deep comparison between two values to
+   * determine if they are equivalent.
    *
+   * Note: This method supports comparing arrays, array buffers, booleans, date objects,
+   * error objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and
+   * typed arrays. Object objects are compared by their own, not inherited, enumerable properties.
+   * Functions and DOM nodes are compared by strict equality, i.e. ===.
+   *
+   * @param {string|*} str1
+   * @param {string|*} str2
+   * @returns {boolean} - True if equal
+   */
+  isEqual: function isEqual(str1, str2) {
+    return require('./isEqual')(str1, str2);
+  },
+
+  /**
    * @param {*|Array} value - value to test
    * @returns {boolean} - true if array, false if not
    */
   isArray: function(value){
-    return isArray(value);
+    return require('./isArray')(value);
   },
 
   /**
-   * @function
    * @param {*|null} value - value to test
    * @returns {boolean} - true if null or defined, false if not
    */
   isNull: function(value){
-    return isNull(value);
+    return require('./isNull')(value);
   },
   /**
    * @param {*|boolean} value - the value to test
@@ -43,14 +51,14 @@ module.exports = {
    * @returns {boolean} - true if boolean, false if not
    */
   isBool: function(value, numAllowed){
-    return isBool(value, numAllowed);
+    return require('./isBool')(value, numAllowed);
   },
   /**
    * @param {*|string} value - value to test
    * @returns {boolean} - true if string, false if not
    */
   isString: function(value){
-    return isString(value);
+    return require('./isString')(value);
   },
 
   /**
