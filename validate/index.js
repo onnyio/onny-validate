@@ -39,7 +39,7 @@ module.exports = {
   },
 
   /**
-   * @param {*|null} value - value to test
+   * @param {null|string} value - value to test
    * @returns {boolean} - true if null or defined, false if not
    */
   isNull: function(value){
