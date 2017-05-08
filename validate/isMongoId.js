@@ -12,6 +12,7 @@
 
 
 var validator = require('validator');
+var isString = require('./isString');
 
 /**
  * check if the string is a valid hex-encoded representation of a MongoDB ObjectId.
@@ -23,5 +24,5 @@ var validator = require('validator');
  * @returns {boolean} - true if formatted as a mongoID
  */
 module.exports = function (value) {
-  return validator.isMongoId(value)
+  return isString(value) && validator.isMongoId(value)
 };
