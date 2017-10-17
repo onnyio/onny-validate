@@ -13,8 +13,6 @@
 
 'use strict'
 
-var sanitize = require('./sanitize');
-
 module.exports = {
   /**
    * Uses onny-utils to perform a deep comparison between two values to

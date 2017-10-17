@@ -13,6 +13,7 @@
 
 
 var chai = require('chai');
+var onnyValidate = require('../index');
 var isEqual = require('../isEqual');
 
 var expect = chai.expect;
@@ -22,6 +23,11 @@ describe('isEqual', function () {
     "use strict";
     var apples = "apples";
     expect(isEqual('apples', apples)).to.be.true;
+  });
+  it('from index', function () {
+    "use strict";
+    var apples = "apples";
+    expect(onnyValidate.isEqual('apples', apples)).to.be.true;
   });
 
 

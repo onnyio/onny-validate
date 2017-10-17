@@ -13,11 +13,16 @@
 
 
 var chai = require('chai');
+var onnyValidate = require('../index');
 var isEmail = require('../isEmail');
 
 var expect = chai.expect;
 
 describe('isString', function () {
+  it('from index', function () {
+    "use strict";
+    expect(onnyValidate.isEmail('isaac@onny.io')).to.be.true;
+  });
   it('isaac@onny.io', function () {
     "use strict";
     expect(isEmail('isaac@onny.io')).to.be.true;

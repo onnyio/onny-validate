@@ -13,11 +13,16 @@
 
 
 var chai = require('chai');
+var onnyValidate = require('../index');
 var isArray = require('../isArray');
 
 var expect = chai.expect;
 
 describe('isArray', function(){
+  it('from index', function () {
+    "use strict";
+    expect(onnyValidate.isArray([])).to.be.true;
+  });
   it('empty array', function () {
     "use strict";
     expect(isArray([])).to.be.true;
