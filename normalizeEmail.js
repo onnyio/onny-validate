@@ -7,11 +7,11 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.4.28
+ * Last Modified: 2017.10.17
  */
 
 var validator = require('validator');
-var isEmail = require('../validate/isEmail');
+var isEmail = require('./isEmail');
 
 /**
  * replace <, >, &, ', " and / with HTML entities.

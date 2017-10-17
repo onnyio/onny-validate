@@ -7,7 +7,7 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.4.28
+ * Last Modified: 2017.10.17
  */
 
 var isString = require('./isString');
@@ -16,12 +16,13 @@ var validator = require('validator');
 /**
  *
  * @param {*} value - the value to test
- * @param {boolean} numAllowed - should we treat 1/0 as true/false. defaults to false
- * @returns {boolean} - true if boolean, false if not
+ * @param {boolean} [numAllowed] - should we treat 1/0 as true/false. defaults to false
+ * @returns {boolean}  - true if boolean, false if not
  */
 module.exports = function isBoolean(value, numAllowed) {
   if (typeof value === 'boolean') { return true; }
-  if (numAllowed) {
+
+  if ( arguments.length > 1 && arguments[1] === true) {
     if (value === 1 || value === 0) { return true; }
   }
   if (isString(value)) {

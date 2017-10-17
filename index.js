@@ -13,8 +13,6 @@
 
 'use strict'
 
-var sanitize = require('./sanitize');
-
 module.exports = {
   /**
    * Uses onny-utils to perform a deep comparison between two values to
@@ -30,7 +28,7 @@ module.exports = {
    * @returns {boolean} - True if equal
    */
   isEqual: function isEqual(str1, str2) {
-    return require('./validate/isEqual')(str1, str2);
+    return require('./isEqual')(str1, str2);
   },
 
   /**
@@ -38,7 +36,7 @@ module.exports = {
    * @returns {boolean} - true if array, false if not
    */
   isArray: function(value){
-    return require('./validate/isArray')(value);
+    return require('./isArray')(value);
   },
 
   /**
@@ -46,7 +44,7 @@ module.exports = {
    * @returns {boolean} - true if null or defined, false if not
    */
   isNull: function(value){
-    return require('./validate/isNull')(value);
+    return require('./isNull')(value);
   },
   /**
    * @param {*|boolean} value - the value to test
@@ -54,14 +52,14 @@ module.exports = {
    * @returns {boolean} - true if boolean, false if not
    */
   isBool: function(value, numAllowed){
-    return require('./validate/isBool')(value, numAllowed);
+    return require('./isBool')(value, numAllowed);
   },
   /**
    * @param {*|string} value - value to test
    * @returns {boolean} - true if string, false if not
    */
   isString: function(value){
-    return require('./validate/isString')(value);
+    return require('./isString')(value);
   },
 
   /**
@@ -69,7 +67,7 @@ module.exports = {
    * @returns {boolean} - true if email, false if not
    */
   isEmail: function (value) {
-    return require('./validate/isEmail')(value);
+    return require('./isEmail')(value);
   },
 
   /**
@@ -77,7 +75,7 @@ module.exports = {
    * @returns {boolean} - true if valid password, false if not
    */
   isPassword: function (value) {
-    return require('./validate/isPassword')(value);
+    return require('./isPassword')(value);
   },
 
   /**
@@ -85,7 +83,7 @@ module.exports = {
    * @returns {boolean} - true if valid date
    */
   isDate: function (value) {
-    return require('./validate/isDate')(value);
+    return require('./isDate')(value);
   },
 
   /**
@@ -94,7 +92,7 @@ module.exports = {
    * @returns {boolean} - true if valid date before
    */
   isDateBefore: function (value, beforeDate) {
-    return require('./validate/isDateBefore')(value, beforeDate);
+    return require('./isDateBefore')(value, beforeDate);
   },
 
   /**
@@ -103,7 +101,7 @@ module.exports = {
    * @returns {boolean} - true if valid date is after afterDate
    */
   isDateAfter: function (value, afterDate) {
-    return require('./validate/isDateAfter')(value, afterDate);
+    return require('./isDateAfter')(value, afterDate);
   },
 
   /**
@@ -115,8 +113,9 @@ module.exports = {
    * @returns {boolean} - true if formatted as a mongoID
    */
   isMongoId: function (value) {
-    return require('./validate/isMongoId')(value);
+    return require('./isMongoId')(value);
   },
+
 
 
   /**
@@ -126,7 +125,7 @@ module.exports = {
    * @returns {string|null} - string with  <, >, &, ', " and / replaced with HTML entities
    */
   escape: function (input) {
-    return sanitize.escape(input);
+    return require('./escape')(input);
   },
 
   /**
@@ -136,7 +135,7 @@ module.exports = {
    * @returns {string|null} - string with HTML encoded entities replaced with <, >, &, ', " and /
    */
   unescape: function (input) {
-    return sanitize.unescape(input);
+    return require('./unescape')(input);
   },
 
   /**
@@ -199,7 +198,7 @@ module.exports = {
    * @returns {string|null} - string with  <, >, &, ', " and / replaced with HTML entities
    */
   normalizeEmail: function (email, options) {
-    return sanitize.normalizeEmail(email, options);
+    return require('./normalizeEmail')(email, options);
   },
 
   /**
@@ -210,6 +209,6 @@ module.exports = {
    * @returns {string|false} - false if invalid, otherwise chars omitted string
    */
   blacklist: function (input, chars) {
-    return sanitize.blacklist(input, chars);
+    return require('./blacklist')(input, chars);
   }
 };
