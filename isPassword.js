@@ -7,7 +7,7 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.4.28
+ * Last Modified: 2017.10.17
  */
 
 
@@ -21,7 +21,7 @@
 //      {5,20}    #   length at least 6 characters and maximum of 20
 // )              # End of group
 // http://www.regexr.com/
-var passwordPattern = '^([a-zA-Z0-9].{5,19})$';
+var passwordPattern = '^([a-zA-Z0-9].{5,50})$';
 // const passwordPattern = "([A-Za-z](?=.[A-Za-z0-9@#$%])\w{5,20})";
 
 module.exports = function (password) {

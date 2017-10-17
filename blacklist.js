@@ -7,11 +7,11 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.4.28
+ * Last Modified: 2017.10.17
  */
 
 var validator = require('validator');
-var isString = require('../validate/isString');
+var isString = require('./isString');
 
 /**
  * remove characters that appear in the blacklist. The characters are used in a

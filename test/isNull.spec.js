@@ -13,7 +13,7 @@
 
 
 var chai = require('chai');
-var isNull = require('../validate/isNull');
+var isNull = require('../isNull');
 
 var expect = chai.expect;
 

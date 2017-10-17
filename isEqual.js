@@ -7,10 +7,10 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.5.3
+ * Last Modified: 2017.10.17
  */
 
-var utils = require('onny-utils')
+var utilsIsEqual = require('onny-utils/isEqual');
 
 
 /**
@@ -27,5 +27,5 @@ var utils = require('onny-utils')
  * @returns {boolean} - True if equal
  */
 module.exports = function isEqual(str1, str2) {
-  return utils.isEqual(str1, str2);
+  return utilsIsEqual(str1, str2);
 };
