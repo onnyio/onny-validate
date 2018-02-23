@@ -18,7 +18,7 @@ var isEmail = require('../isEmail');
 
 var expect = chai.expect;
 
-describe('isString', function () {
+describe('isEmail', function () {
   it('from index', function () {
     "use strict";
     expect(onnyValidate.isEmail('isaac@onny.io')).to.be.true;
@@ -33,6 +33,15 @@ describe('isString', function () {
       "use strict";
       expect(isEmail('isaac@onny')).to.be.false;
     });
-  })
+    it('numbers', function () {
+      "use strict";
+      expect(isEmail(123)).to.be.false;
+    });
+    it('bool', function () {
+      "use strict";
+      expect(isEmail(true)).to.be.false;
+    });
+  });
+
 
 });
