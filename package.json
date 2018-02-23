@@ -1,6 +1,6 @@
 {
   "name": "onny-validate",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "common validators for onny products",
   "main": "index.js",
   "scripts": {
@@ -29,15 +29,15 @@
   },
   "homepage": "https://github.com/onnyio/onny-validate#readme",
   "dependencies": {
-    "onny-utils": "^1.0.1",
-    "validator": "^7.0.0"
+    "onny-utils": "^1.0.9",
+    "validator": "^9.4.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "coveralls": "^2.13.0",
-    "eslint-config-onny": "^1.0.1-0",
-    "mocha": "^3.2.0",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "eslint-config-onny": "^1.0.5",
+    "mocha": "^5.0.1",
     "mocha-lcov-reporter": "^1.3.0",
-    "nyc": "^10.2.0"
+    "nyc": "^11.4.1"
   }
 }

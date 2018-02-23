@@ -11,7 +11,8 @@
  */
 
 var validator = require('validator');
+var isString = require('./isString')
 
 module.exports = function isEmail(value) {
-  return validator.isEmail(value)
+  return isString(value) && validator.isEmail(value)
 };
