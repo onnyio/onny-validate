@@ -1,6 +1,6 @@
 {
   "name": "onny-validate",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "common validators for onny products",
   "main": "index.js",
   "scripts": {

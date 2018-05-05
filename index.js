@@ -41,10 +41,26 @@ module.exports = {
 
   /**
    * @param {null|string} value - value to test
-   * @returns {boolean} - true if null or defined, false if not
+   * @returns {boolean} - true if null, false if not
    */
   isNull: function(value){
     return require('./isNull')(value);
+  },
+
+  /**
+   * @param {null|string} value - value to test
+   * @returns {boolean} - true if null or undefined, false if not
+   */
+  isNil: function(value){
+    return require('./isNil')(value);
+  },
+
+  /**
+   * @param {null|string} value - value to test
+   * @returns {boolean} - true if not a number
+   */
+  isNaN: function(value){
+    return require('./isNaN')(value);
   },
   /**
    * @param {*|boolean} value - the value to test

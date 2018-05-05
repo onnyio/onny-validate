@@ -10,11 +10,12 @@
  * Last Modified: 2017.4.28
  */
 
+var isNumber = require('./isNumber');
 
 /**
  * @param {*} value - value to test
- * @returns {boolean} - true if null or defined, false if not
+ * @returns {boolean} - true if a number, else false
  */
-module.exports = function isNull(value) {
-  return value === null;
+module.exports = function (value) {
+  return isNumber(value)
 };

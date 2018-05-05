@@ -14,29 +14,37 @@
 
 var chai = require('chai');
 var onnyValidate = require('../index');
-var isNull = require('../isNull');
+var isNil = require('../isNil');
 
 var expect = chai.expect;
 
-describe('isNull', function(){
+describe('isNil', function(){
   it('from index', function () {
     "use strict";
-    expect(onnyValidate.isNull(null)).to.be.true;
+    expect(onnyValidate.isNil(null)).to.be.true;
   });
   it('null', function () {
     "use strict";
-    expect(isNull(null)).to.be.true;
+    expect(isNil(null)).to.be.true;
+  });
+  it('undefined', function () {
+    "use strict";
+    expect(isNil(undefined)).to.be.true;
+  });
+  it('the string \'null\'', function () {
+    "use strict";
+    expect(isNil("null")).to.be.true;
   });
   it('0 Fails', function () {
     "use strict";
-    expect(isNull(0)).to.be.false;
+    expect(isNil(0)).to.be.false;
   });
   it('False Fails', function () {
     "use strict";
-    expect(isNull(false)).to.be.false;
+    expect(isNil(false)).to.be.false;
   });
   it('Numbers Fails', function () {
     "use strict";
-    expect(isNull(1)).to.be.false;
+    expect(isNil(1)).to.be.false;
   });
 });

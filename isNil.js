@@ -10,11 +10,15 @@
  * Last Modified: 2017.4.28
  */
 
+var isEqual = require('./isEqual');
 
 /**
  * @param {*} value - value to test
  * @returns {boolean} - true if null or defined, false if not
  */
 module.exports = function isNull(value) {
-  return value === null;
+  if (value == null || typeof (value) === 'undefined'){
+    return true;
+  }
+  return (isEqual(value, 'null'));
 };
