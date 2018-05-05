@@ -10,11 +10,20 @@
  * Last Modified: 2017.4.28
  */
 
+var isNil = require('./isNil');
 
 /**
+ * uses the global isNaN
  * @param {*} value - value to test
- * @returns {boolean} - true if null or defined, false if not
+ * @returns {boolean} - true if not a number, undefined, or other non-number values
  */
-module.exports = function isNull(value) {
-  return value === null;
+module.exports = function (value) {
+  // return isNaN(value)
+  if (isNaN(value)) {
+    return true;
+  }
+  if (isNil(value)) {
+    return true;
+  }
+  return false;
 };
