@@ -1,5 +1,5 @@
 /**
- * @Copyright (C) 2015-2017 Onny LLC - All Rights Reserved
+ * @Copyright (C) 2015-2018 Onny LLC - All Rights Reserved
  *
  * This file is part of onny-validate and is the sole property of its owner.
  * Unauthorized use of this file, via any medium or form, whole or in part,
@@ -7,11 +7,10 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.4.28
+ * Last Modified: 2018.9.29
  */
 
-
-'use strict'
+/* eslint-disable global-require */
 
 module.exports = {
   /**
@@ -35,7 +34,7 @@ module.exports = {
    * @param {*|Array} value - value to test
    * @returns {boolean} - true if array, false if not
    */
-  isArray: function(value){
+  isArray(value) {
     return require('./isArray')(value);
   },
 
@@ -43,7 +42,7 @@ module.exports = {
    * @param {null|string} value - value to test
    * @returns {boolean} - true if null, false if not
    */
-  isNull: function(value){
+  isNull(value) {
     return require('./isNull')(value);
   },
 
@@ -51,7 +50,7 @@ module.exports = {
    * @param {null|string} value - value to test
    * @returns {boolean} - true if null or undefined, false if not
    */
-  isNil: function(value){
+  isNil(value) {
     return require('./isNil')(value);
   },
 
@@ -59,7 +58,7 @@ module.exports = {
    * @param {null|string} value - value to test
    * @returns {boolean} - true if not a number
    */
-  isNaN: function(value){
+  isNaN(value) {
     return require('./isNaN')(value);
   },
   /**
@@ -67,14 +66,14 @@ module.exports = {
    * @param {boolean} [numAllowed] - should we treat 1/0 as true/false. defaults to false
    * @returns {boolean} - true if boolean, false if not
    */
-  isBool: function(value, numAllowed){
+  isBool(value, numAllowed) {
     return require('./isBool')(value, numAllowed);
   },
   /**
    * @param {*|string} value - value to test
    * @returns {boolean} - true if string, false if not
    */
-  isString: function(value){
+  isString(value) {
     return require('./isString')(value);
   },
 
@@ -82,7 +81,7 @@ module.exports = {
    * @param {*|string} value - value to test
    * @returns {boolean} - true if email, false if not
    */
-  isEmail: function (value) {
+  isEmail(value) {
     return require('./isEmail')(value);
   },
 
@@ -90,7 +89,7 @@ module.exports = {
    * @param {*|string} value - value to test
    * @returns {boolean} - true if valid password, false if not
    */
-  isPassword: function (value) {
+  isPassword(value) {
     return require('./isPassword')(value);
   },
 
@@ -98,25 +97,25 @@ module.exports = {
    * @param {*|Date} value
    * @returns {boolean} - true if valid date
    */
-  isDate: function (value) {
+  isDate(value) {
     return require('./isDate')(value);
   },
 
   /**
    * @param {*|Date} value - value to check
-   * @param {Date} beforeDate - the date to check against
+   * @param {Date} [beforeDate=Date.now()] - the date to check against
    * @returns {boolean} - true if valid date before
    */
-  isDateBefore: function (value, beforeDate) {
+  isDateBefore(value, beforeDate) {
     return require('./isDateBefore')(value, beforeDate);
   },
 
   /**
    * @param {*|Date} value - value to check
-   * @param {Date} afterDate - the date to check against
+   * @param {Date} [afterDate=Date.now()] - the date to check against
    * @returns {boolean} - true if valid date is after afterDate
    */
-  isDateAfter: function (value, afterDate) {
+  isDateAfter(value, afterDate) {
     return require('./isDateAfter')(value, afterDate);
   },
 
@@ -128,10 +127,9 @@ module.exports = {
    * @param {*|String} value
    * @returns {boolean} - true if formatted as a mongoID
    */
-  isMongoId: function (value) {
+  isMongoId(value) {
     return require('./isMongoId')(value);
   },
-
 
 
   /**
@@ -140,7 +138,7 @@ module.exports = {
    * @param {string} input - the string to check
    * @returns {string|null} - string with  <, >, &, ', " and / replaced with HTML entities
    */
-  escape: function (input) {
+  escape(input) {
     return require('./escape')(input);
   },
 
@@ -150,7 +148,7 @@ module.exports = {
    * @param {string} input - the string to parse
    * @returns {string|null} - string with HTML encoded entities replaced with <, >, &, ', " and /
    */
-  unescape: function (input) {
+  unescape(input) {
     return require('./unescape')(input);
   },
 
@@ -213,7 +211,7 @@ module.exports = {
    *
    * @returns {string|null} - string with  <, >, &, ', " and / replaced with HTML entities
    */
-  normalizeEmail: function (email, options) {
+  normalizeEmail(email, options) {
     return require('./normalizeEmail')(email, options);
   },
 
@@ -222,9 +220,9 @@ module.exports = {
    * RegExp and so you will need to escape some chars, e.g. blacklist(input, '\\[\\]').
    * @param {string} input
    * @param {string} chars
-   * @returns {string|false} - false if invalid, otherwise chars omitted string
+   * @returns {string|boolean} - false if invalid, otherwise chars omitted string
    */
-  blacklist: function (input, chars) {
+  blacklist(input, chars) {
     return require('./blacklist')(input, chars);
   }
 };

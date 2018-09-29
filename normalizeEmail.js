@@ -1,5 +1,5 @@
 /**
- * @Copyright (C) 2015-2017 Onny LLC - All Rights Reserved
+ * @Copyright (C) 2015-2018 Onny LLC - All Rights Reserved
  *
  * This file is part of onny-validate and is the sole property of its owner.
  * Unauthorized use of this file, via any medium or form, whole or in part,
@@ -7,10 +7,10 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.10.17
+ * Last Modified: 2018.9.29
  */
 
-var validator = require('validator');
+var normalizeEmail = require('validator/lib/normalizeEmail');
 var isEmail = require('./isEmail');
 
 /**
@@ -73,8 +73,8 @@ var isEmail = require('./isEmail');
  * @returns {string|null} - string with  <, >, &, ', " and / replaced with HTML entities
  */
 module.exports = function (email, options) {
-  if(!isEmail(email)){
+  if (!isEmail(email)) {
     return null;
   }
-  return validator.normalizeEmail(email, options);
+  return normalizeEmail(email, options);
 };

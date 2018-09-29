@@ -1,5 +1,5 @@
 /**
- * @Copyright (C) 2015-2017 Onny LLC - All Rights Reserved
+ * @Copyright (C) 2015-2018 Onny LLC - All Rights Reserved
  *
  * This file is part of onny-validate and is the sole property of its owner.
  * Unauthorized use of this file, via any medium or form, whole or in part,
@@ -7,11 +7,11 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.4.28
+ * Last Modified: 2018.9.29
  */
 
 
-var validator = require('validator');
+var isMongoId = require('validator/lib/isMongoId');
 var isString = require('./isString');
 
 /**
@@ -24,5 +24,5 @@ var isString = require('./isString');
  * @returns {boolean} - true if formatted as a mongoID
  */
 module.exports = function (value) {
-  return isString(value) && validator.isMongoId(value)
+  return isString(value) && isMongoId(value);
 };

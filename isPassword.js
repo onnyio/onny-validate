@@ -1,5 +1,5 @@
 /**
- * @Copyright (C) 2015-2017 Onny LLC - All Rights Reserved
+ * @Copyright (C) 2015-2018 Onny LLC - All Rights Reserved
  *
  * This file is part of onny-validate and is the sole property of its owner.
  * Unauthorized use of this file, via any medium or form, whole or in part,
@@ -7,9 +7,8 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.10.17
+ * Last Modified: 2018.9.29
  */
-
 
 
 // (              # Start of group
