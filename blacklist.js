@@ -1,5 +1,5 @@
 /**
- * @Copyright (C) 2015-2017 Onny LLC - All Rights Reserved
+ * @Copyright (C) 2015-2018 Onny LLC - All Rights Reserved
  *
  * This file is part of onny-validate and is the sole property of its owner.
  * Unauthorized use of this file, via any medium or form, whole or in part,
@@ -7,10 +7,10 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.10.17
+ * Last Modified: 2018.9.29
  */
 
-var validator = require('validator');
+var blacklist = require('validator/lib/blacklist');
 var isString = require('./isString');
 
 /**
@@ -18,11 +18,11 @@ var isString = require('./isString');
  * RegExp and so you will need to escape some chars, e.g. blacklist(input, '\\[\\]').
  * @param {string} input
  * @param {string} chars
- * @returns {string|false} - false if invalid, otherwise chars omitted string
+ * @returns {string|boolean} - false if invalid, otherwise chars omitted string
  */
 module.exports = function (input, chars) {
-  if(!isString(input)){ return false; }
-  if(!isString(chars)){ return false; }
+  if (!isString(input)) { return false; }
+  if (!isString(chars)) { return false; }
 
-  return validator.blacklist(input, chars);
+  return blacklist(input, chars);
 };

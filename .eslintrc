@@ -7,6 +7,12 @@
     "browser": true,
     "node": true,
     "mocha": true,
-    "es6": true
+    "es6": false
+  },
+  "rules":{
+    "prefer-rest-params": 0,
+    "prefer-arrow-callback": 0,
+    "no-var": 0,
+    "func-names": 0
   }
 }

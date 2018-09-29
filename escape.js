@@ -1,5 +1,5 @@
 /**
- * @Copyright (C) 2015-2017 Onny LLC - All Rights Reserved
+ * @Copyright (C) 2015-2018 Onny LLC - All Rights Reserved
  *
  * This file is part of onny-validate and is the sole property of its owner.
  * Unauthorized use of this file, via any medium or form, whole or in part,
@@ -7,10 +7,10 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.10.17
+ * Last Modified: 2018.9.29
  */
 
-var validator = require('validator');
+var escape = require('validator/lib/escape');
 var isString = require('./isString');
 
 /**
@@ -20,8 +20,8 @@ var isString = require('./isString');
  * @returns {string|null} - string with  <, >, &, ', " and / replaced with HTML entities
  */
 module.exports = function (input) {
-  if(!isString(input)){
+  if (!isString(input)) {
     return null;
   }
-  return validator.escape(input);
+  return escape(input);
 };

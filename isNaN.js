@@ -1,5 +1,5 @@
 /**
- * @Copyright (C) 2015-2017 Onny LLC - All Rights Reserved
+ * @Copyright (C) 2015-2018 Onny LLC - All Rights Reserved
  *
  * This file is part of onny-validate and is the sole property of its owner.
  * Unauthorized use of this file, via any medium or form, whole or in part,
@@ -7,7 +7,7 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.4.28
+ * Last Modified: 2018.9.29
  */
 
 var isNil = require('./isNil');
@@ -18,12 +18,9 @@ var isNil = require('./isNil');
  * @returns {boolean} - true if not a number, undefined, or other non-number values
  */
 module.exports = function (value) {
-  // return isNaN(value)
-  if (isNaN(value)) {
+  // use global isNaN, which returns true for undefined and other non-number values.
+  if (isNaN(value)) { // eslint-disable-line no-restricted-globals
     return true;
   }
-  if (isNil(value)) {
-    return true;
-  }
-  return false;
+  return isNil(value);
 };

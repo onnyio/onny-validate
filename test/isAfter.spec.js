@@ -13,24 +13,18 @@
 
 var chai = require('chai'); // eslint-disable-line import/no-extraneous-dependencies
 var onnyValidate = require('../index');
-var isNull = require('../isNull');
+var isDateAfter = require('../isDateAfter');
 
 var expect = chai.expect;
 
-describe('isNull', function () {
-  it('from index', function () {
-    expect(onnyValidate.isNull(null)).to.be.true;
+describe('isDateAfter', function () {
+  it('after date', function () {
+    expect(isDateAfter(new Date(Date.now() + 10000))).to.be.true;
   });
-  it('null', function () {
-    expect(isNull(null)).to.be.true;
+  it('before date', function () {
+    expect(isDateAfter(new Date(2016, 12))).to.be.false;
   });
-  it('0 Fails', function () {
-    expect(isNull(0)).to.be.false;
-  });
-  it('False Fails', function () {
-    expect(isNull(false)).to.be.false;
-  });
-  it('Numbers Fails', function () {
-    expect(isNull(1)).to.be.false;
+  it('use index', function () {
+    expect(onnyValidate.isDateAfter(new Date(Date.now() + 10000))).to.be.true;
   });
 });

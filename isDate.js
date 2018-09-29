@@ -1,5 +1,5 @@
 /**
- * @Copyright (C) 2015-2017 Onny LLC - All Rights Reserved
+ * @Copyright (C) 2015-2018 Onny LLC - All Rights Reserved
  *
  * This file is part of onny-validate and is the sole property of its owner.
  * Unauthorized use of this file, via any medium or form, whole or in part,
@@ -7,12 +7,12 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2017.4.28
+ * Last Modified: 2018.9.29
  */
 
-var validator = require('validator');
+var isISO8601 = require('validator/lib/isISO8601');
 var isString = require('./isString');
-
+var isNil = require('./isNil');
 
 
 /**
@@ -20,8 +20,9 @@ var isString = require('./isString');
  * @returns {boolean} - true if valid date
  */
 module.exports = function (value) {
-  if(isString(value)){
-    return validator.isISO8601(value)
+  if (isNil(value)) { return false; }
+  if (isString(value)) {
+    return isISO8601(value);
   }
-  return validator.isISO8601(value.toISOString())
+  return isISO8601(value.toISOString());
 };
