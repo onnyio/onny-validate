@@ -10,8 +10,8 @@
  * Last Modified: 2018.9.29
  */
 
-var isString = require('./isString');
 var isBoolean = require('validator/lib/isBoolean');
+var isString = require('./isString');
 
 /**
  *
