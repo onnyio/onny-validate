@@ -1,5 +1,5 @@
 /**
- * @Copyright (C) 2015-2018 Onny LLC - All Rights Reserved
+ * @Copyright (C) 2015-2019 Onny LLC - All Rights Reserved
  *
  * This file is part of onny-validate and is the sole property of its owner.
  * Unauthorized use of this file, via any medium or form, whole or in part,
@@ -7,15 +7,14 @@
  *
  * This file is proprietary and confidential
  *
- * Last Modified: 2018.9.29
+ * Last Modified: 2019.3.22
  */
 
-var isNaN = require('./isNaN');
 
 /**
  * @param {*} value - value to test
  * @returns {boolean} - true if a number, else false
  */
 module.exports = function (value) {
-  return !isNaN(value);
+  return Number.isInteger(value);
 };

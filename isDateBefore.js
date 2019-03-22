@@ -10,11 +10,11 @@
  * Last Modified: 2018.9.29
  */
 
+var isBefore = require('validator/lib/isBefore');
 var isDate = require('./isDate');
 var isNil = require('./isNil');
 var isString = require('./isString');
 
-var isBefore = require('validator/lib/isBefore');
 
 /**
  * @param {*} value
