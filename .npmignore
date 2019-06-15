@@ -8,6 +8,7 @@ babel-config.js
 .eslintignore
 .travis.yml
 package-lock.json
+.idea
 
 
 # Created by .ignore support plugin (hsz.mobi)
