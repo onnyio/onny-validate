@@ -144,4 +144,4 @@ default: true
 ##### License
 [GPL-3.0 License](https://github.com/onnyio/onny-validate/blob/master/LICENSE)
 
-Copyright (C) 2015-2017 Onny LLC - All Rights Reserved
+Copyright (C) 2015-2019 Onny LLC - All Rights Reserved
