@@ -11,6 +11,7 @@
  */
 
 var isURL = require('validator/lib/isURL');
+var isString = require('./isString');
 
 
 /**
@@ -23,5 +24,5 @@ var isURL = require('validator/lib/isURL');
  * @returns {boolean} - True if equal
  */
 module.exports = function (str, options) {
-  return isURL(str, options);
+  return isString(str) && isURL(str, options);
 };
