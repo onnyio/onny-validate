@@ -14,7 +14,7 @@
 
 module.exports = {
   /**
-   * Uses onny-utils to perform a deep comparison between two values to
+   * Uses @onny/utils to perform a deep comparison between two values to
    * determine if they are equivalent.
    *
    * Note: This method supports comparing arrays, array buffers, booleans, date objects,

@@ -18,7 +18,7 @@ var isEqual = require('../isEqual');
 var expect = chai.expect;
 
 describe('isEqual', function () {
-  it('Testing is done in onny-utils', function () {
+  it('Testing is done in @onny/utils', function () {
     var apples = 'apples';
     expect(isEqual('apples', apples)).to.be.true;
   });
