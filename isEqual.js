@@ -10,7 +10,7 @@
  * Last Modified: 2017.10.17
  */
 
-var utilsIsEqual = require('@onny/utils/isEqual');
+var utilsIsEqual = require('@onny/utils/dist/isEqual');
 
 
 /**

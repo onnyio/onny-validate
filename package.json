@@ -1,6 +1,6 @@
 {
   "name": "@onny/validate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "common validators for onny products",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   ],
   "author": "Isaac Marotte <isaac@onny.io>",
   "contributors": [
-    "Isaac Marotte <isaac@onny.io> (http://onny.io)"
+    "Isaac Marotte <isaac@onny.io> (https://onny.io)"
   ],
   "license": "GPL-3.0",
   "bugs": {
