@@ -2,13 +2,13 @@
   "extends": [
     "onny"
   ],
-  "parser": "babel-eslint",
   "env": {
-    "browser": true,
-    "node": true,
-    "mocha": true,
-    "es6": false
+    "mocha": true
   },
+  "plugins": [
+    "chai-expect",
+    "chai-friendly"
+  ],
   "rules":{
     "prefer-rest-params": 0,
     "prefer-arrow-callback": 0,

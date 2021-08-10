@@ -36,4 +36,7 @@ describe('isUrl', function () {
   it('undefined', function () {
     expect(isUrl(undefined)).to.be.false;
   });
+  it('has underscore', function () {
+    expect(isUrl('https://youtu.be/h_29KxKc34E')).to.be.true;
+  });
 });
