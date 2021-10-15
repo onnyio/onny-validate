@@ -1,12 +1,12 @@
 {
   "name": "@onny/validate",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "common validators for onny products",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --ext .js --format ./node_modules/eslint-config-onny/eslintFormat",
-    "lint-fix": "eslint . --ext .js --format ./node_modules/eslint-config-onny/eslintFormat --fix",
-    "lint-fix_test": "eslint ./test --ext .js --format ./node_modules/eslint-config-onny/eslintFormat --fix",
+    "lint": "eslint . --ext .js",
+    "lint-fix": "eslint . --ext .js --fix",
+    "lint-fix_test": "eslint ./test --ext .js --format --fix",
     "test_local": "mocha",
     "test": "nyc mocha && nyc report --reporter=text-lcov | coveralls"
   },
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/onnyio/onny-validate#readme",
   "dependencies": {
-    "@onny/utils": "0.2.2",
+    "@onny/utils": "^0.2.3",
     "validator": "^13.6.0"
   },
   "optionalDependencies": {
